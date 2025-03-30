@@ -38,6 +38,7 @@ let getId = () => {
 
 // GET Employees
 router.get('/employees', (request, response) => {
+    console.log(`GET REQUEST Recieve at server ... ${new Date().toLocaleDateString()}`);
     response.json(employees);
 });
 
@@ -89,7 +90,7 @@ router.put(`/employees/:id`, (request, response) => {
 router.delete('/employees/:id', (request, response) => {
     let empId = request.params.id;
     employees = employees.filter((employee) => {
-        return e, employee.id !== empId;
+        return employee.id !== empId;
     });
 
     console.log(`DELETE REQUEST Recieve at server ... ${new Date().toLocaleDateString()}`);
