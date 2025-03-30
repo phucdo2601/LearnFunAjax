@@ -23,6 +23,28 @@ var createNewData = {
     }
 }
 
+// update data on server
+var updateData = {
+    init: function () {
+        // put button
+        var putBtn = document.querySelector('#put-btn');
+        putBtn.addEventListener('click', function () {
+            apiHandlerFunc.putUpdateEmployee();
+        })
+    }
+}
+
+// delete data on server
+var deleteData = {
+    init: function () {
+        // delete button
+        var deleteBtn = document.querySelector('#delete-btn');
+        deleteBtn.addEventListener('click', function () {
+            apiHandlerFunc.deleteEmployee();
+        })
+    }
+}
+
 var apiHandlerFunc = {
     fetchListEmployees: function () {
         // AJAX CALLS API
@@ -67,10 +89,42 @@ var apiHandlerFunc = {
             alert(JSON.stringify(data));
             apiHandlerFunc.fetchListEmployees();
         });
+    },
+
+    putUpdateEmployee: function () {
+        let id = `3`;
+        let url = `${serverUrl}/employees/${id}`;
+        let employee = {
+            'id': id,
+            "first_name": "test_first_name_b02",
+            "last_name": "test_last_name_b02",
+            'email': "testEmailB01@gmail.com",
+            "gender": "FeMale",
+            "ip_address": "132.88.564.99"
+        };
+
+        let http = new BrainHttp();
+        http.put(url, employee, (data) => {
+            alert(JSON.stringify(data));
+            apiHandlerFunc.fetchListEmployees();
+        });
+    },
+
+    deleteEmployee: function () {
+        let id = `3`;
+        let url = `${serverUrl}/employees/${id}`;
+        let http = new BrainHttp();
+        http.delete(url, (data) => {
+            alert(JSON.stringify(data));
+            apiHandlerFunc.fetchListEmployees();
+        });
     }
+
 }
 
 $(function () {
     loadListData.init();
     createNewData.init();
+    updateData.init();
+    deleteData.init();
 });
