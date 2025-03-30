@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../bootstrap/css/font-awesome-5.8.1.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap/css/mdb.css">
+    <title>EMPLOYEE PORTAL | AJAX</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="#" class="navbar-brand">EMPLOYEE PORTAL | AJAX</a>
+    </nav>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <h3>Employee Portal</h3>
+                <p class="lead">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and
+                    scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap
+                    into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                    the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing
+                    software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+
+                <button class="btn btn-success" data-toggle="modal" data-target="#add-employee-modal">
+                    Add Employee
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Employee Modal -->
+    <div class="modal" id="add-employee-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h3>Add Employee</h3>
+                    <button class="close" data-dismiss="modal">
+                        <i class="fa fa-times-circle"></i>
+                    </button>
+                </div>
+
+                <div class="modal-body bg-light">
+                    <form id="add-employee-form">
+                        <div class="form-group">
+                            <input required id="add-first-name" type="text" class="form-control"
+                                placeholder="First Name" />
+                        </div>
+                        <div class="form-group">
+                            <input required id="add-last-name" type="text" class="form-control"
+                                placeholder="Last Name" />
+                        </div>
+                        <div class="form-group">
+                            <input required id="add-email" type="text" class="form-control" placeholder="Email" />
+                        </div>
+                        <div class="form-group">
+                            <select required id="add-gender" class="form-control" name="" id="">
+                                <option value="" class="">Select Gender</option>
+                                <option value="Male" class="">Male</option>
+                                <option value="Female" class="">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input required id="add-ip-address" type="text" class="form-control"
+                                placeholder="IP Address" />
+                        </div>
+                        <button class="btn btn-success" type="submit">Add Employee</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <table class="table table-hover text-center table-secondary table-striped">
+                    <thead class="bg-secondary text-white">
+                        <tr>
+                            <th>EMP ID</th>
+                            <th>FIRST NAME</th>
+                            <th>LAST NAME</th>
+                            <th>EMAIL</th>
+                            <th>GENDER</th>
+                            <th>IP ADDRESS</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="table-body">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Bootstrap JS File -->
+    <script src="../jquery/jquery-3.4.0.js"></script>
+    <script src="../bootstrap/js/popper.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <script src="../bootstrap/js/mdb.js"></script>
+
+    <script type="module" src="./app.js"></script>
+</body>
+
+</html>
